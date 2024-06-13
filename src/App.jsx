@@ -8,19 +8,13 @@ function App() {
   useEffect(() => {
     try {
       const storedTodos = localStorage.getItem("todos");
-      console.log("Raw storedTodos from Local Storage:", storedTodos);
 
       if (storedTodos) {
         const parsedTodos = JSON.parse(storedTodos);
-        console.log("Parsed storedTodos from Local Storage:", parsedTodos);
 
         if (Array.isArray(parsedTodos) && parsedTodos.length > 0) {
           setTodos(parsedTodos);
-        } else {
-          console.log("No valid todos found in Local Storage.");
         }
-      } else {
-        console.log("No todos found in Local Storage.");
       }
     } catch (error) {
       console.error("Error getting todos from Local Storage:", error);
@@ -29,12 +23,9 @@ function App() {
 
   useEffect(() => {
     try {
-      console.log("Preparing to save todos to Local Storage:", todos);
       const stringifiedTodos = JSON.stringify(todos);
-      console.log("Stringified todos:", stringifiedTodos);
 
       localStorage.setItem("todos", stringifiedTodos);
-      console.log("Successfully saved todos to Local Storage.");
     } catch (error) {
       console.error("Error saving todos to Local Storage:", error);
     }
@@ -70,7 +61,6 @@ function App() {
             Swift Task Manager
           </h1>
           <div className="mb-8">
-            {/* Todo form goes here */}
             <TodoForm />
           </div>
           {todos.length === 0 ? (
@@ -79,7 +69,6 @@ function App() {
             </p>
           ) : (
             <div className="flex flex-wrap gap-y-6 gap-x-4 align-center justify-around">
-              {/* Loop and Add TodoItem here */}
               {todos.map((todo) => (
                 <div key={todo.id}>
                   <TodoItem todo={todo} />
@@ -88,7 +77,6 @@ function App() {
             </div>
           )}
 
-          {/* Watermark */}
           <div className="fixed bottom-0 left-0 w-full bg-transparent text-black text-center py-2 md:text-white md:bg-transparent">
             Made with ❤ by Anmol
           </div>
