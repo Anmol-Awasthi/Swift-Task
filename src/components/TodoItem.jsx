@@ -18,19 +18,26 @@ function TodoItem({ todo }) {
 
   return (
     <div
-      className={`flex border border-black/10 rounded-lg px-3 py-1.5 gap-x-3 shadow-sm shadow-white/50 duration-300  text-black ${
+      className={`flex-col border border-black/10 rounded-lg px-3 py-1.5 gap-x-3 shadow-sm shadow-white/50 duration-300  text-black ${
         todo.completed ? "bg-[#c6e9a7]" : "bg-[#ccbed7]"
       }`}
     >
+      <div className="flex justify-between items-center gap-4 ">
       <input
         type="checkbox"
         className="cursor-pointer"
         checked={todo.completed}
         onChange={toggleEditMode}
       />
+      {todo.completed? (
+        <p>Already done ..!!</p>
+      ) : (
+        <p >Do it ..!!</p>
+      )}
+      </div>
       <input
         type="text"
-        className={`border outline-none w-full break-words bg-transparent rounded-lg ${
+        className={`border outline-none w-full break-words bg-transparent rounded-lg mb-4 text-center mt-3 ${
           isTodoEditable ? "border-black/10 px-2" : "border-transparent"
         } ${todo.completed ? "line-through" : ""}`}
         value={todoMsg}
@@ -38,6 +45,7 @@ function TodoItem({ todo }) {
         readOnly={!isTodoEditable}
       />
       {/* Edit, Save Button */}
+      <div className="flex justify-around items-center gap-4">
       <button
         className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50"
         onClick={() => {
@@ -58,6 +66,7 @@ function TodoItem({ todo }) {
       >
         ❌
       </button>
+      </div>
     </div>
   );
 }
