@@ -75,7 +75,7 @@ function TodoItem({ todo }) {
       {isDeletePopupVisible && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm mx-auto">
-            <h2 className="text-xl font-bold text-red-600 mb-2">Wait a Minute!</h2>
+            <h2 className="text-xl font-bold text-red-600 mb-2">Think Again!</h2>
             <p className="text-gray-700">Are you sure you want to remove this task?</p>
             <div className="flex justify-around items-center gap-4 mt-4">
               <button
