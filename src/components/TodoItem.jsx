@@ -37,7 +37,7 @@ function TodoItem({ todo }) {
       </div>
       <input
         type="text"
-        className={`border w-full break-words bg-transparent rounded-lg mb-2 text-center text-lg font-medium ${
+        className={`border w-full break-words bg-transparent rounded-lg mb-2 text-center text-lg font-medium outline-none text-ellipsis ${
           isTodoEditable ? "border-gray-400 px-2 py-1" : "border-transparent px-2 py-1"
         } ${todo.completed ? "line-through text-gray-500" : "text-gray-800"}`}
         value={todoMsg}

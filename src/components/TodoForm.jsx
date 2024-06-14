@@ -24,7 +24,7 @@ function TodoForm() {
   <input
     type="text"
     placeholder="Enter your task here..."
-    className="w-full max-w-lg border border-none rounded-l-lg px-3 py-2 outline-none duration-150 bg-[#1c2541] text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500"
+    className="w-full max-w-lg border border-none rounded-l-lg px-3 py-2 outline-none duration-150 bg-[#1c2541] text-white placeholder-gray-400 focus:ring-2 focus:ring-white overflow-hidden"
     value={todo}
     onChange={(e) => setTodo(e.target.value)}
   />
