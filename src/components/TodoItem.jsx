@@ -25,7 +25,7 @@ function TodoItem({ todo }) {
       <div className="flex justify-between items-center">
         <input
           type="checkbox"
-          className="cursor-pointer form-checkbox h-5 w-5 text-purple-600"
+          className="cursor-pointer form-checkbox h-5 w-5 text-purple-600" 
           checked={todo.completed}
           onChange={toggleEditMode}
         />
@@ -38,7 +38,9 @@ function TodoItem({ todo }) {
       <input
         type="text"
         className={`border w-full break-words bg-transparent rounded-lg mb-2 text-center text-lg font-medium outline-none text-ellipsis ${
-          isTodoEditable ? "border-gray-400 px-2 py-1" : "border-transparent px-2 py-1"
+          isTodoEditable
+            ? "border-gray-400 px-2 py-1"
+            : "border-transparent px-2 py-1"
         } ${todo.completed ? "line-through text-gray-500" : "text-gray-800"}`}
         value={todoMsg}
         onChange={(e) => setTodoMsg(e.target.value)}
@@ -75,8 +77,12 @@ function TodoItem({ todo }) {
       {isDeletePopupVisible && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm mx-auto">
-            <h2 className="text-xl font-bold text-red-600 mb-2">Think Again!</h2>
-            <p className="text-gray-700">Are you sure you want to remove this task?</p>
+            <h2 className="text-xl font-bold text-red-600 mb-2">
+              Think Again!
+            </h2>
+            <p className="text-gray-700">
+              Are you sure you want to remove this task?
+            </p>
             <div className="flex justify-around items-center gap-4 mt-4">
               <button
                 className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
